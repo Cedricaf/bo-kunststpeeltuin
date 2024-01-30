@@ -9,9 +9,7 @@
 Servo servo;
 ```
 > Hier maak ik de variable servo voor mijn Servomotor. Zo weet de Arduino dat ik de Servomotor bedoel wanneer ik de variable servo gebruik. Ik heb bovenaan de code de Servomotor toegevoegd met deze lijn:
-```C++
-#include <Servo.h>
-```
+```#include <Servo.h>```
 
 ```C++ 
 int servoPin = 9;
