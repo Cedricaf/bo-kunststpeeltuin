@@ -1,0 +1,28 @@
+*{
+    box-sizing: none;
+    margin: 0;
+    padding: 0;
+}
+
+
+body {
+    background: linear-gradient(to bottom right, rgb(145, 176, 176), rgb(84, 110, 110));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+
+.wrapper{
+    border-radius: 5rem;
+}
+
+.camera, .canvas {
+    border-radius: 1rem;
+    filter: grayscale(0%) sepia(0%) brightness(100%) contrast(100%) saturate(100%);
+}
