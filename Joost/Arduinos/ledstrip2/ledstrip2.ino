@@ -12,15 +12,13 @@ void setup() {
   Serial.begin(115200);
 }
 
-void loop() {
-  // Set the RGB values to create a steady light  // Set red to maximum intensity 255
-               // Wait for 1 second        
-  analogValue = analogRead(LIGHT_SENSOR_PIN); // read the input on analog pin
+void loop() {        
+  analogValue = analogRead(LIGHT_SENSOR_PIN); 
   Serial.print("Analog Value: ");
   Serial.println(analogValue);  
     delay(1000); 
    if(analogValue > 400){
-     analogWrite(REDPIN, 0);   // Set red to maximum intensity 255
+     analogWrite(REDPIN, 0);   
     }
 
 

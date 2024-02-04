@@ -235,3 +235,60 @@ function getButtonName(buttonIndex) {
 }
 ```
 
+
+## Code Documentatie (Joost)
+- Dit is de documentatie van mijn led strip arduino code
+
+
+## Begin
+#define REDPIN 5
+#define GREENPIN 6
+#define BLUEPIN 3
+
+- Bij deze definineer ik de kleuren rood groen en blauw bij welke deze in de arduino zitten. Dus bijvoorbeeld de kabel voor de rode kleur zit in slot 5
+
+
+const int LIGHT_SENSOR_PIN = A0;
+
+- Hierzo geef ik aan dat de licht sensor in slot a0 zit, zodat ik later de waardes kan uitlezen in de Serial monitor
+
+int analogValue;
+
+- Deze gebruik ik later om de licht waardes uit te lezen in de Serial monitor
+
+
+
+## SETUP
+
+void setup() {
+  pinMode(REDPIN, OUTPUT);
+  pinMode(GREENPIN, OUTPUT);
+  pinMode(BLUEPIN, OUTPUT);
+  Serial.begin(115200);
+}
+
+-Hierzo worden de pins op output gezet. Dit betekent dat er een uitgangssignaal moet komen. Dit is nodig omdat de pinnen signalen naar de led's stuurt
+
+- De serial begint op een baudrate van 115200. Dit heeft te maken met de snelheid waarmee het informatie verstuurt
+
+
+## LOOP 
+
+void loop() {        
+  analogValue = analogRead(LIGHT_SENSOR_PIN); 
+  Serial.print("Analog Value: ");
+  Serial.println(analogValue);  
+    delay(1000); 
+   if(analogValue > 400){
+     analogWrite(REDPIN, 0);   
+    }
+
+
+    else 
+    analogWrite(REDPIN, 255);
+}
+
+-In de loop wordt aan analogValue meegegeven dat hij de waardes moet lezen van de lichtsensor. Deze print ie dan in de monitor met SerialPrintin. De analog value verandert van waarde als de lichtinval anders is op de lichtsensor
+
+-Daarna is er een if statement te zien die kijkt naar de waarde of deze grooter is dan 400. Als deze groter is, dan gaat de led strip uit (op waarde van 0). Als dit niet het geval is, dan gaat ie weer aan (naar een waarde van 255)
+
